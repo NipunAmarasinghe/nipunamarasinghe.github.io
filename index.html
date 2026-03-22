@@ -1,98 +1,721 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Nipun Amarasinghe | Analytics Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #111;
-            color: #f5f5f5;
-        }
-        header {
-            padding: 60px 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-weight: normal;
-            color: #aaa;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        .project {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #1c1c1c;
-            border-radius: 8px;
-        }
-        a {
-            color: #4da6ff;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nipun Amarasinghe | Healthcare & Operations Data Analyst</title>
+  <meta
+    name="description"
+    content="Nipun Amarasinghe - Healthcare & Operations Data Analyst specialising in Power BI, SQL, Python, and digital health analytics."
+  />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --bg-soft: #12161c;
+      --card: #161b22;
+      --card-2: #1c2430;
+      --text: #f5f7fa;
+      --muted: #a9b3c1;
+      --line: #293241;
+      --accent: #7cc4ff;
+      --accent-2: #d4e9ff;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 196, 255, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.04), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 13, 16, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 90px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      background: rgba(124, 196, 255, 0.08);
+      border: 1px solid rgba(124, 196, 255, 0.16);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      margin: 0 0 16px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--accent-2);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #071018;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      filter: brightness(1.03);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      color: var(--accent-2);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .stat h3 {
+      margin: 0 0 6px;
+      font-size: 1.4rem;
+      color: var(--accent-2);
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--card-2);
+      color: var(--accent-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 34px 0 20px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin: 0 0 8px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(124, 196, 255, 0.28);
+    }
+
+    .project-image {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      object-fit: cover;
+      background: #0f141a;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .project-body {
+      padding: 20px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: rgba(124, 196, 255, 0.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .project-meta {
+      color: var(--accent-2);
+      font-size: 0.94rem;
+      margin-bottom: 18px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .small-link {
+      color: var(--text);
+      border-bottom: 1px solid transparent;
+      font-weight: 600;
+    }
+
+    .small-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .skills-grid,
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--muted);
+    }
+
+    .info-card ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .tool {
+      background: var(--bg-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--accent-2);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.94rem;
+    }
+
+    .cta {
+      margin: 34px 0 80px;
+      background: linear-gradient(135deg, rgba(124,196,255,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(124,196,255,0.16);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .cta h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .project-grid,
+      .skills-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h1>NipunAmarasinghe</h1>
-    <h2>Healthcare Performance & Data Analytics</h2>
-</header>
-
-<section>
-    <h2>About</h2>
-    <p>
-        Healthcare data professional focused on operational performance, capacity modelling,
-        and analytics-driven decision support.
-    </p>
-</section>
-
-<section>
-    <h2>Featured Projects</h2>
-
-    <div class="project">
-        <h3>Hospital Performance Dashboard</h3>
-        <p>Power BI model analysing patient flow, bed occupancy, and throughput trends.</p>
-        <a href="https://github.com/NipunAmarasinghe/hospital-performance-dashboard">View Project →</a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Nipun Amarasinghe</div>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#why-me">Why Me</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="project">
-        <h3>Lab Inventory Optimisation</h3>
-        <p>SQL + forecasting model reducing reagent expiry risk and improving cost control.</p>
-        <a href="https://github.com/NipunAmarasinghe/pathology-himf-tracking-app">View Project →</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Healthcare • Operations • Analytics</div>
+          <h1>Nipun Amarasinghe</h1>
+          <div class="hero-subtitle">
+            Healthcare & Operations Data Analyst
+          </div>
+          <p class="hero-text">
+            I build dashboards, models, and digital tools that help healthcare
+            and laboratory teams improve efficiency, reduce waste, and make
+            better operational decisions.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            <a class="btn btn-secondary" href="mailto:nipunc.amarasinghe@gmail.com">Email Me</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <h3>4+ Years</h3>
+              <p>Pathology and laboratory operations experience</p>
+            </div>
+            <div class="stat">
+              <h3>Power BI</h3>
+              <p>Dashboards for performance, inventory, and patient flow</p>
+            </div>
+            <div class="stat">
+              <h3>SQL + Python</h3>
+              <p>Analysis, transformation, and data-driven reporting</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Core Focus</h2>
+          <p style="color: var(--muted); margin-top: 0;">
+            My work sits at the intersection of healthcare operations,
+            analytics, and digital systems.
+          </p>
+          <div class="pill-row">
+            <div class="pill">Healthcare Analytics</div>
+            <div class="pill">Power BI Dashboards</div>
+            <div class="pill">Laboratory Operations</div>
+            <div class="pill">Inventory Intelligence</div>
+            <div class="pill">Digital Health</div>
+            <div class="pill">Process Improvement</div>
+            <div class="pill">SQL Reporting</div>
+            <div class="pill">Python Analysis</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <p>
+            A selection of analytics, dashboard, and digital workflow projects
+            focused on healthcare and operational performance.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <img class="project-image" src="images/hospital-dashboard.jpg" alt="Hospital Performance Dashboard preview" />
+            <div class="project-body">
+              <span class="project-tag">Power BI • Healthcare</span>
+              <h3>Hospital Performance Dashboard</h3>
+              <p>
+                Interactive Power BI dashboard analysing patient flow, bed
+                occupancy, throughput, and hospital performance trends.
+              </p>
+              <p class="project-meta">
+                Outcome: Built to support capacity planning and operational visibility.
+              </p>
+              <div class="project-links">
+                <a class="small-link" href="https://github.com/nipunamarasinghe" target="_blank" rel="noopener noreferrer">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="images/lab-inventory.jpg" alt="Lab Inventory Optimisation dashboard preview" />
+            <div class="project-body">
+              <span class="project-tag">SQL • Forecasting • Operations</span>
+              <h3>Lab Inventory Optimisation</h3>
+              <p>
+                Inventory tracking and forecasting model designed to reduce
+                reagent expiry risk, improve ordering decisions, and strengthen
+                cost control in pathology operations.
+              </p>
+              <p class="project-meta">
+                Outcome: Improved visibility of expiry risk and procurement inefficiencies.
+              </p>
+              <div class="project-links">
+                <a class="small-link" href="https://github.com/nipunamarasinghe" target="_blank" rel="noopener noreferrer">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="images/cell-app.jpg" alt="Cell Identification App preview" />
+            <div class="project-body">
+              <span class="project-tag">Python • Computer Vision</span>
+              <h3>Cell Identification App</h3>
+              <p>
+                Computer vision application for identifying WBCs, RBCs, and
+                platelets from cell images to support laboratory workflows and
+                model-assisted classification.
+              </p>
+              <p class="project-meta">
+                Outcome: Showcases applied AI in a real lab-relevant use case.
+              </p>
+              <div class="project-links">
+                <a class="small-link" href="https://github.com/nipunamarasinghe" target="_blank" rel="noopener noreferrer">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img class="project-image" src="images/healthcare-system.jpg" alt="Healthcare System Performance Dashboard preview" />
+            <div class="project-body">
+              <span class="project-tag">Power BI • 55K Patients</span>
+              <h3>Healthcare System Performance Dashboard</h3>
+              <p>
+                Interactive Power BI dashboard built on a 55K patient dataset to
+                explore patient trends, hospital performance, revenue patterns,
+                and operational efficiency.
+              </p>
+              <p class="project-meta">
+                Outcome: Demonstrates end-to-end healthcare analytics storytelling.
+              </p>
+              <div class="project-links">
+                <a class="small-link" href="https://github.com/nipunamarasinghe" target="_blank" rel="noopener noreferrer">View Project</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills & Tools</h2>
+          <p>
+            Tools and systems I use to transform raw operational data into
+            clear, decision-ready insights.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="info-card">
+            <h3>Analytics & BI</h3>
+            <p>
+              Building dashboards, reports, and interactive visualisations for
+              operational and healthcare performance.
+            </p>
+            <div class="tools">
+              <span class="tool">Power BI</span>
+              <span class="tool">Excel</span>
+              <span class="tool">Dashboard Design</span>
+              <span class="tool">KPI Tracking</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Data & Querying</h3>
+            <p>
+              Cleaning, transforming, querying, and analysing structured data
+              to generate business and clinical insights.
+            </p>
+            <div class="tools">
+              <span class="tool">SQL</span>
+              <span class="tool">PostgreSQL</span>
+              <span class="tool">SQL Server</span>
+              <span class="tool">Python</span>
+              <span class="tool">Pandas</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Healthcare Systems</h3>
+            <p>
+              Experience with healthcare workflows, pathology operations, and
+              digital tools that support clinical services.
+            </p>
+            <div class="tools">
+              <span class="tool">HL7</span>
+              <span class="tool">LIS</span>
+              <span class="tool">Power Apps</span>
+              <span class="tool">Operational Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-me">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Me</h2>
+          <p>
+            I am not just building portfolio projects. I bring real operational
+            context from pathology and healthcare environments.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="info-card">
+            <h3>Real Domain Experience</h3>
+            <ul>
+              <li>4+ years in pathology and laboratory operations</li>
+              <li>Understanding of clinical workflows and operational pressure points</li>
+              <li>Grounded view of what useful analytics actually looks like</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Problem-Solving Mindset</h3>
+            <ul>
+              <li>Focus on efficiency, visibility, and better decision-making</li>
+              <li>Interest in process improvement, cost control, and system performance</li>
+              <li>Comfortable moving from raw data to actionable insights</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Bridge Between Data & Operations</h3>
+            <ul>
+              <li>Can speak both the language of frontline operations and analytics</li>
+              <li>Interested in digital health, health analytics, and consulting-style work</li>
+              <li>Strong fit for healthcare operations and analyst roles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2>Let’s Connect</h2>
+          <p>
+            I am currently open to healthcare analytics, digital health, and
+            operations-focused analyst opportunities. Feel free to reach out or
+            explore my GitHub projects.
+          </p>
+          <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
+            <a class="btn btn-primary" href="mailto:nipunc.amarasinghe@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://github.com/nipunamarasinghe" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Nipun Amarasinghe. Built with GitHub Pages.
     </div>
-
-    <div class="project">
-        <h3>Cell Identification App</h3>
-        <p>Identification of WBCs, RBCs and Plateletes</p>
-        <a href="https://github.com/NipunAmarasinghe/cell-identification-ai-app">View Project →</a>
-    </div>
-
-    <div class="project">
-        <h3>Healthcare System Performance Dashboard</h3>
-        <p>Power BI healthcare analytics dashboard using a 55K Patient dataset to analyse patient trends, hospital performance, revenue, and efficiency</p>
-        <a href="https://github.com/NipunAmarasinghe/Healthcare-System-Performance-Dashboard">View Project →</a>
-    </div>
-
-</section>
-
-<footer>
-    © 2026 Nipun Amarasinghe | Built with GitHub Pages
-</footer>
-
+  </footer>
 </body>
 </html>
